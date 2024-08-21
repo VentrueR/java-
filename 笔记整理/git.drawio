@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="第 1 页" id="PUV1Zgy9EMAUt3cHHjkv">
+    <mxGraphModel dx="2117" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nnWU7sI8_et5YlEomofI-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-1" target="nnWU7sI8_et5YlEomofI-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-1" value="git" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-685" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nnWU7sI8_et5YlEomofI-2" target="nnWU7sI8_et5YlEomofI-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-2" value="add/add ." style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-3" value="pull" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nnWU7sI8_et5YlEomofI-4" target="nnWU7sI8_et5YlEomofI-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-4" value="fetch" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-5" value="commit&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;Source Code Pro&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, &amp;quot;Anonymous Pro&amp;quot;, &amp;quot;Droid Sans Mono&amp;quot;, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, sans-serif; font-size: 14px; font-variant-ligatures: no-common-ligatures; text-align: start; white-space: pre; background-color: rgb(245, 247, 255);&quot;&gt;-m &quot;注释&quot;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="650" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-6" value="push&amp;nbsp;&lt;span style=&quot;font-family: &amp;quot;Source Code Pro&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, &amp;quot;Ubuntu Mono&amp;quot;, &amp;quot;Anonymous Pro&amp;quot;, &amp;quot;Droid Sans Mono&amp;quot;, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, sans-serif; font-size: 14px; font-variant-ligatures: no-common-ligatures; text-align: start; white-space: pre; background-color: rgb(245, 247, 255);&quot;&gt;-u origin master&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="760" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nnWU7sI8_et5YlEomofI-8" target="nnWU7sI8_et5YlEomofI-9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-8" value="init" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-685" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="nnWU7sI8_et5YlEomofI-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="nnWU7sI8_et5YlEomofI-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="nnWU7sI8_et5YlEomofI-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="nnWU7sI8_et5YlEomofI-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="S33xjqydzAAWfUDKh2Uc-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="S33xjqydzAAWfUDKh2Uc-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="S33xjqydzAAWfUDKh2Uc-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-9" target="S33xjqydzAAWfUDKh2Uc-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-9" value="公有密钥ssh：&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;ssh-keygen -t rsa -C &quot;自己的邮箱&quot;&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-740" y="340" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-10" target="nnWU7sI8_et5YlEomofI-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="nnWU7sI8_et5YlEomofI-10" target="nnWU7sI8_et5YlEomofI-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-10" value="clone" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-150" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-11" value="merge" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-12" value="check out" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-130" y="585" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nnWU7sI8_et5YlEomofI-15" value="reset&amp;nbsp;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;[--&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;soft &lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;mixed &lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;hard&lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt; &lt;/span&gt;&lt;span class=&quot;pun&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;pln&quot; style=&quot;font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; font-size: 13px; border: 0px; margin: 0px; padding: 0px; color: rgb(23, 28, 25);&quot;&gt;HEAD~]&lt;/span&gt;&lt;span style=&quot;font-size: 13px; color: rgb(23, 28, 25); font-family: Menlo, &amp;quot;Bitstream Vera Sans Mono&amp;quot;, &amp;quot;DejaVu Sans Mono&amp;quot;, Monaco, Consolas, monospace; background-color: initial;&quot;&gt;撤回提交到head个版本&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=0;align=center;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="870" width="285" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S33xjqydzAAWfUDKh2Uc-4" value="git remote add origin xxx.git" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="170" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="S33xjqydzAAWfUDKh2Uc-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="S33xjqydzAAWfUDKh2Uc-6" target="nnWU7sI8_et5YlEomofI-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="S33xjqydzAAWfUDKh2Uc-6" value="git branch -M main" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="590" width="150" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

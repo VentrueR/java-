@@ -1,0 +1,2 @@
+className = test.Student
+methodName = show
