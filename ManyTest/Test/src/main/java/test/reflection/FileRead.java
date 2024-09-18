@@ -1,9 +1,6 @@
-package test;
+package test.reflection;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * @Author: 韩睿
@@ -12,17 +9,18 @@ import java.io.IOException;
  **/
 public class FileRead {
     public static void main(String args[]) throws IOException {
-        File file = new File("./TestReflection/src/main/resources/Hello1.txt");
+        File file = new File("./Test/src/main/resources/Hello1.txt");
         // 创建文件
         file.createNewFile();
         // creates a FileWriter Object
         FileWriter writer = new FileWriter(file);
         // 向文件写入内容
-        writer.write("This\n is\n an\n example\n");
+        writer.write("你好世界");
         writer.flush();
         writer.close();
         // 创建 FileReader 对象
         FileReader fr = new FileReader(file);
+        //InputStreamReader fr = new InputStreamReader(new FileInputStream("./Test/src/main/resources/Hello1.txt"), "UTF-8");
         char[] a = new char[50];
         fr.read(a); // 读取数组中的内容
         //for (char c : a)// 一个一个打印字符

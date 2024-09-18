@@ -1,0 +1,2 @@
+className = test.reflection.Student
+methodName = show

@@ -352,13 +352,19 @@ throws 传递给调用者处理
 
 ### 是什么
 
-特性。能在程序运行时，动态获取和修改类的属性和方法
+特性。能在程序运行时，动态获取类信息，创建对象实例，修改字段，调用方法
 
 ### 创建对象的方式
 
-new、class,constructor newInstance()、clone、反序列化
+new、Class类或Constructor类来newInstance()、clone、反序列化
 
-### 详细见实战
+### 实战
+
+#### 获取class对象
+
+类名获取、实例对象获取、类名路径获取（java包开始）
+
+#### 构造器、方法、属性
 
 ## 8.注解
 
@@ -368,5 +374,216 @@ new、class,constructor newInstance()、clone、反序列化
 
 ## 9.IO
 
+### 字节流
+
+#### 组成
+
+InputStream、OutputStream父类
+
+#### 常用字节流
+
+FileInputStream、FileOutputSream常用配套使用，指定路径 
+
+read()可单个读，可读char[]
+
+DataInputStream 读取具体类型数据
+
+ObjectInoutStream 反序列化
+
+#### 场景
+
+读取原实字节（字节是文件读写和网络发送的最小信息单元）
+
+一般是音视频、图片
+
+### 字符流
+
+#### 组成
+
+Reader、Writer
+
+InputStreamReader 字节流转字符流桥梁
+
+FileReader 操作字符
+
+#### 区别
+
+字符是jvm转化字节得来。
+
+字节流编码乱码问题。
+
+#### 场景
+
+文本操作
+
+#### 编码格式
+
+实例化桥梁，构造方法自定义编码格式（第一参指定字节流）
+
+unicode默认 2字节
+
+utf-8 中文3字节
+
+gbk 中文2字节
+
+### 字节、字符缓冲流
+
+缓冲区byte，相对普通流减少io
+
+### 三大常见IO模型
+
+#### BIO
+
+同步阻塞
+
+#### NIO
+
+同步非阻塞
+
+
+
+selector：核心，实现IO多路复用，替代线程轮询IO、避免线程阻塞
+
+channel、buffer：实现非阻塞，IO写入缓冲区，不再阻塞等待。数据从通道读缓冲区(或缓冲区写通道)
+
+
+
+线程通过selector处理channel注册事件
+
+
+
+NIO网络框架netty
+
+#### AIO
+
+异步
+
+基于事件和回调函数实现
+
 ## 10.序列化和反序列化
 
+### 场景
+
+字节流便于传输
+
+boot项目把类转换成JSON格式字符串，字符串实现序列化，默认序列化ID-..
+
+### 序列化ID
+
+一般显示设置，增删改会改变隐式ID
+
+### 实战细节
+
+Object字节流操作，直接对class对象操作（实现Serializable(标记)）
+
+transient修饰的属性不被序列化(密码)
+
+static 不序列化，从jvm中获取（反序列化之前修改 有无static修饰的属性得来）
+
+static transient 同时用 不序列化
+
+final 序列化，final transient 不序列化
+
+## 11.工具类
+
+### Random
+
+r = new random -> nextInt(b-a) + a或nextDouble*(b-a) + a -> (a,b)
+
+### 时间类
+
+Date
+
+Calender
+
+## 12.Java新特性
+
+jdk8 
+
+### 时间API
+
+LocalDateTime相关：LocalDateTime、LocalDate、LocalTime
+
+.of方法设置时间
+
+Zone 时区相关：ZoneId、ZoneDateTime
+
+Instant：时间戳
+
+DateTimeFormatter：时间格式化、线程安全
+
+.ofPattern()
+
+间隔 Duration、Period
+
+
+
+### lambda表达式
+
+参数 ->方法体（单复句）
+
+### 方法和构造器引用
+
+#### 方法
+
+对象 ：：实例方法 参数和返回值相同或一致（装拆箱、多态），返回方法来替代
+
+类 ：：静态方法 ~~~
+
+前两者都是方法b覆盖抽象方法a
+
+
+
+类 ：： 实例方法
+
+抽象方法a参数为n,方法b为n-1，a分第一个参数调用者，后n-1参数和返回值相同或一致
+
+#### 构造器
+
+类 ：： new
+
+#### 数组
+
+数组名 ：： new
+
+### stream流
+
+#### 实例化
+
+集合生成 list.stream() 或list.prallelStream
+
+数组生成 Arrays.stream(方法名)
+
+of默认方法生成 Stream.of(...)
+
+#### 操作
+
+filter(条件过滤) distinct(去重 equals 和 hashcode) skip(跳过前面的x项) limit（只要前面的x项）
+
+map(映射对象) sorted(排序器)
+
+#### 终止
+
+匹配与查找
+
+allMatch、anyMatch、noneMatch
+
+findfirst、findAny
+
+count、max、min、forEach
+
+归约
+
+reduce(初始值，lambda)
+
+collect(Collectors.toList())
+
+## 补充：持久化
+
+### 文件
+
+### 序列化和反序列化
+
+### 数据库
+
+关系和非关系型

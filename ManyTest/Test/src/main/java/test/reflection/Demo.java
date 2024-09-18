@@ -1,4 +1,4 @@
-package test;
+package test.reflection;
 
 import java.io.File;
 import java.io.FileNotFoundException;

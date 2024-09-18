@@ -1,4 +1,4 @@
-package test;
+package test.reflection;
 import java.lang.reflect.Field;
 /*
  * 获取成员变量并调用：
@@ -21,7 +21,7 @@ public class Fields {
  
 		public static void main(String[] args) throws Exception {
 			//1.获取Class对象
-			Class stuClass = Class.forName("test.Student");
+			Class stuClass = Class.forName("test.reflection.Student");
 			//2.获取字段
 			System.out.println("************获取所有公有的字段********************");
 			Field[] fieldArray = stuClass.getFields();

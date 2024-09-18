@@ -1,6 +1,6 @@
 1.获取类对象
 //常用类的路径获取
-Class clazz = Class.forName("test.Student")
+Class clazz = Class.forName("test.reflection.Student")
 
 2.获取类构造器
 //从参数类型获取

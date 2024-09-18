@@ -1,4 +1,4 @@
-# Spring框架相关
+# SSM框架相关
 
 ## Spring
 
@@ -234,13 +234,13 @@ xml配置init-method 和 destroy-method
 
 ### 5.Spring循环依赖
 
-单例模式下setter方法注入，A类有B属性，B有A
+单例模式下setter方法注入，A类注入B对象，B注入A
 
 都是Map缓存
 
 一级缓存 实例且初始化的bean对象。
 
-二级缓存 实例未初始化的bean对象 即引用
+二级缓存 实例化但未完全初始化的bean对象，未注入
 
 三级缓存 objectFactory对象
 
@@ -260,5 +260,132 @@ Controller 控制器 请求和响应view 和 model
 
 见图
 
+### HandlerMapping 和 handlerAdapter
+
+前者负责将请求映射到处理器Controller
+
+后者负责调用处理器Controller处理请求
+
+## SpringBoot
+
+### 比较Spring
+
+基于约定大于配置原则，实现自动配置
+
+引入不同starter快速集成框架和库
+
+内嵌tomcat等服务器
+
+### 约定大于配置
+
+自动配置
+
+默认配置
+
+默认约定，项目结构和bean命名
+
+### 自动装配
+
+SpringBoot程序启动时，会扫描外部引用jar包的META-INF/spring.factories文件，将文件的配置信息记载到spring容器从而操作其中的类
+
+@SpringBootApplication包含
+
+@EnableAutoConfiguration 实现自动装配
+
+@Configuration 上下文注册bean或其他配置类
+
+@ComponentScan 扫描、注册@Component修饰的类
+
+### 使用starter
+
+创建maven工程
+
+配置META/INF/spring.factories
+
+创建配置属性类
+
+创建服务和处理器
+
+（发布到maven仓库）
+
+pom添加依赖
+
+## Mybatis
+
+### #{}和${}
+
+后者是直接拼接文本替换，容易出现sql注入（攻击数据库）
+
+前者参数占位符，会进行预编译？来代替，sql执行前set赋值
+
+## 微服务
+
+### 组件
+
+注册中心：Nacos
+
+负载均衡：Nacos
+
+服务通信：OpenFeign Http -> 和Dubbo -> rpc
+
+配置中心：nacos
+
+服务保护：Sentinel
+
+### 负载均衡
+
+轮询
+
+加权轮询
+
+随机
+
+加权随机
+
+一致性哈希
+
+最小活跃数
+
+### 服务降级、限流、熔断
+
+降级（关掉不重要业务功能，提升服务性能）  由 超时、限流、熔断（不可用）实现
+
+## mybatiyPlus
+
+### 常用注解
+
+@TableName 指定表名
+
+@TableId 指定主键，和IdType类型（AUTO\INPUT\雪花算法）
+
+@TableField 指定属性（关键字‘’,isbool,数据库不存在）
+
+### 常用配置
+
+mapper包下可以定义新包
+
+## 注解
+
+### lombook
+
+@Data、@NoArgsConstructor、@AllArgsConstructor、@Getter、@Setter、@EqualsAndHashCode(true)父类不影响equals..
+
+### @Componet
+
+@Controller @Service  @Repositroy @Mapper
+
+组件服务声明，SpringBoot自动装配
+
+### Request
+
+@RequestMapping
+
+映射处理器请求地址
 
 
+
+@RestController = @Controller + @ResponsBody
+
+@RequestBody
+
+前者可修饰类和方法是将java对象转换为JSON，并写回HTTP响应体，后者修饰方法将JSON转换为java对象

@@ -1,4 +1,4 @@
-package test;
+package test.reflection;
  
 import java.lang.reflect.Constructor;
  
@@ -22,7 +22,7 @@ public class Constructors {
  
 	public static void main(String[] args) throws Exception {
 		//1.加载Class对象
-		Class clazz = Class.forName("test.Student");
+		Class clazz = Class.forName("test.reflection.Student");
 		
 		
 		//2.获取所有公有构造方法
