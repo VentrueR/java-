@@ -14,7 +14,7 @@
 
 ###### 反射
 
-java特性
+加载类，实例，调用对象
 
 ###### 设计模式
 
@@ -126,17 +126,21 @@ Target object目标对象：被代理的对象。
 
 ##### 事务传播行为
 
+事务方法调用另一个事务方法！！
+
+
+
 会回滚：
 
 Required默认，有则加入
 
 Requires_new 有则新建
 
-Nested 有则嵌入事务
+Nested 有则嵌入事务（共享，但不影响原来事务）
 
 Mandtory 有则加入，无则异常
 
-不会回滚：
+不会回滚：非事务方式运行/挂起/异常
 
 ##### 事务隔离级别
 
@@ -178,9 +182,7 @@ Mandtory 有则加入，无则异常
 
 （Spring提供）
 
-@Resource：按命名name~
-
-（jdk提供）
+//@Resource：按命名name~（jdk提供）
 
 @Component修饰类，注入bean对象
 
@@ -190,21 +192,47 @@ Mandtory 有则加入，无则异常
 
 ​	@Repository仓储层(启动类@MapperScan或配置文件配置MapperScannerConfiguer那么可以省略)
 
-@Bean: 修饰方法，方法返回值创建bean对象
+
 
 @Configuration： 修饰配置类，定义和配置bean
+
+@Bean: 修饰方法，方法返回值创建bean对象
 
 ### 4.Bean对象
 
 #### 生命周期
 
-创建bean 扫描xml或注解创建
+**实例化**：创建bean 扫描xml或注解创建（ioc）反射拿到bean对象
 
-bean赋值 注解注入赋值
+**属性赋值**：（依赖注入）注解注入赋值
 
-初始化bean 各种接口和方法
+**初始化**：
 
-销毁bean 先记录销毁方法再销毁
+实现了某些接口，可以去set
+
+
+
+实现BeanNameAware接口 **setBeanName**（）
+
+**setBeanClassLoaders()**
+
+~BeanFactoryAware~ **setBeanFactory**（）
+
+~ApplicationContextAware~ **setApplicationContext**（）
+
+
+
+~**BeanPostProcessor**~初始化前 
+
+**InitializingBean**属性赋值后，初始化前（），初始化bean 各种接口和方法
+
+同上两个初始化后
+
+
+
+**销毁bean** 先记录销毁方法再销毁destroy()
+
+实现接口/注解/配置属性
 
 #### 作用域
 
@@ -224,27 +252,39 @@ websocket
 
 #### bean加载、销毁方法
 
-xml配置init-method 和 destroy-method
+！xml配置init-method 和 destroy-method
 
-@Bean initMethod destroyMethod
+！@Bean initMethod destroyMethod
 
-@PostConstruct @PreDestroy
+！@PostConstruct @PreDestroy
 
-实现initializingBean DisposableBean接口
+！实现initializingBean DisposableBean接口
 
 ### 5.Spring循环依赖
 
-单例模式下setter方法注入，A类注入B对象，B注入A
+**单例模式下注入，A类注入B对象，B注入A
 
 都是Map缓存
 
 一级缓存 实例且初始化的bean对象。
 
-二级缓存 实例化但未完全初始化的bean对象，未注入
+二级缓存 实例化但未完全初始化的bean对象//，未注入
 
 三级缓存 objectFactory对象
 
-实例化bean -> 赋值，循环依赖 -> 三级缓存得引用存二级缓存 -> 一级缓存
+
+
+都没有缓存，检查有依赖，则bean工厂加入三级缓存，
+
+B注入A，通过三级缓存getObject()，存二级缓存，注入的A就读这个二级缓存。（存二级的意义在于AOP代理不希望getObject（）得到多个代理类）
+
+//实例化bean -> 赋值，循环依赖 -> 三级缓存得引用存二级缓存 -> 一级缓存
+
+### beanFactory 和 factoryBean
+
+前者是核心容器，管理bean生命周期，配置元数据，依赖注入
+
+后者特殊的Bean 用于 自定义Bean
 
 ## MVC
 
@@ -257,6 +297,8 @@ View 视图 展现给用户
 Controller 控制器 请求和响应view 和 model
 
 ### 工作流程
+
+前端控制器/处理器映射器/处理器适配器/handler处理器
 
 见图
 
@@ -286,6 +328,34 @@ Controller 控制器 请求和响应view 和 model
 
 ### 自动装配
 
+简单来说 注解 + 配置（starter）
+
+@SpringBootApplication   
+
+
+
+-> @EnableAutoConfig/componetscan和/csonfiguration
+
+配置类和componet扫描/自动注入注解
+
+
+
+@EnableAutoConfig
+
+@AutoConfigurationPackage配置包范围
+
+@Import({AutoConfigurationImportSelector.class})
+
+获取所有类名加入ioc
+
+**获取所有符合条件的类的全限定类名，这些类需要被加载到 IoC 容器中**。
+
+获取符合条件的 类的全限定类名（包括包）
+
+//加载自动装配类，IOC容器
+
+
+
 SpringBoot程序启动时，会扫描外部引用jar包的META-INF/spring.factories文件，将文件的配置信息记载到spring容器从而操作其中的类
 
 @SpringBootApplication包含
@@ -295,6 +365,10 @@ SpringBoot程序启动时，会扫描外部引用jar包的META-INF/spring.factor
 @Configuration 上下文注册bean或其他配置类
 
 @ComponentScan 扫描、注册@Component修饰的类
+
+
+
+
 
 ### 使用starter
 
@@ -320,17 +394,89 @@ pom添加依赖
 
 ## 微服务
 
+### 优缺点
+
+拓展性/开发难度/团队合作/风险（高可用性）
+
+
+
 ### 组件
 
-注册中心：Nacos
+注册中心/配置中心：Nacos
 
 负载均衡：Nacos
 
-服务通信：OpenFeign Http -> 和Dubbo -> rpc
+服务通信：OpenFeign Http -> 和Dubbo -> rpc/tcp/socket(通信的约定/解决网络通信)
 
-配置中心：nacos
+//配置中心：Nacos
 
 服务保护：Sentinel
+
+#### Nacos
+
+配置：导入数据库表，docker部署
+
+服务注册：添加依赖aliababa-discovery，注册中心地址
+
+//服务发现：discoveryclien 获取服务实例 getInstance()，（负载均衡、restemplate发http）
+
+#### OpenFein
+
+/通用api模块包写多个服务的调用接口
+
+
+
+服务发现：添加依赖（openfein，loadbalancer负载均衡），
+
+实现服务发现接口，使用@FeinClient("name/url")修饰
+
+配置okhttp连接池，添加依赖，参数开关true
+
+
+
+使用@EnableFeinClient修饰启动类
+
+@Feinclient(name(请求),url)
+
+@Resource注入接口
+
+#### Dubbo
+
+rpc/tcp/socket
+
+@EnableDubbo修饰启动类
+
+@Dubboservice修饰接口实现类
+
+传输对象要序列化
+
+
+
+@DubboReference修饰注入接口对象
+
+实现通信
+
+#### GateWay
+
+/通用网关模块
+
+主要路由转发
+
+引入依赖
+
+
+
+请求路径走哪个微服务
+
+
+
+配置:
+
+id：路由规则id
+
+uri：负载均衡和目标微服务
+
+predict断言：请求路径
 
 ### 负载均衡
 
@@ -389,3 +535,22 @@ mapper包下可以定义新包
 @RequestBody
 
 前者可修饰类和方法是将java对象转换为JSON，并写回HTTP响应体，后者修饰方法将JSON转换为java对象
+
+### 请求参数
+
+前者有路径参数名，后者无（拿到路径参数值）
+
+
+
+@RequestParam ?key=123 -》 路径不写，参数指定
+
+（path/{orderid}）@PathVariable 路径写占位符取url的参数
+
+### 注入
+
+构造函数注入 最推荐，保证不可变性，启动确保不为null
+
+@Autowired 默认指定类型，配合requierd（允许忽略）,Qualifier()
+
+@Resource 默认指定bean名，也可以指定类型
+

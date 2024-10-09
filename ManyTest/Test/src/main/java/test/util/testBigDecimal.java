@@ -31,5 +31,6 @@ public class testBigDecimal {
         bigDecimalc = bigDecimala.multiply(bigDecimalb);
         System.out.println(bigDecimalc);
 
+        //System.out.println(Runtime.getRuntime().availableProcessors());
     }
 }

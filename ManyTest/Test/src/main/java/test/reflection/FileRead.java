@@ -16,6 +16,7 @@ public class FileRead {
         FileWriter writer = new FileWriter(file);
         // 向文件写入内容
         writer.write("你好世界");
+        writer.write("\n你好世界*2");
         writer.flush();
         writer.close();
         // 创建 FileReader 对象
