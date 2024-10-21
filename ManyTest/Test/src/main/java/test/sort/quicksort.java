@@ -27,6 +27,13 @@ public class quicksort {
                 nums[j] = t;
             }
         }
+
+        System.out.println("x = " + now);
+        for (int k = l; k <= r; k++) {
+            System.out.print(nums[k] + " ");
+        }
+        System.out.println();
+
         sort(nums,l,j);
         sort(nums,j+1,r);
     }

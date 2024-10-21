@@ -10,8 +10,6 @@
 
 控制反转，控制是创建初始化销毁对象，反转是控制权交由SpringIOC容器
 
-##### 实现机制
-
 ###### 反射
 
 加载类，实例，调用对象
@@ -32,6 +30,10 @@ SpringIOC容器通过构造方法，属性和方法注入bean
 
 后者如上述，前者是一种设计原则，高层不依赖低层，共同依赖同一个抽象，抽象不依赖细节，具体实现细节依赖抽象
 
+
+
+具体依赖抽象
+
 ##### 自己设计IOC
 
 反射、设计模式、依赖注入、bean对象管理和作用域、异常处理和配置文件、AOP功能
@@ -40,13 +42,13 @@ SpringIOC容器通过构造方法，属性和方法注入bean
 
 ##### 介绍
 
-面向切面编程。可以把业务无关的代码，需要调用的共同模块封装，解耦。
+面向切面编程。与业务无关，但为业务模块共同调用
 
 ##### 功能
 
 注册，登录，增删改查
 
-事务、日志管理
+日志管理//事务、
 
 ##### 实现机制
 
@@ -54,21 +56,21 @@ SpringIOC容器通过构造方法，属性和方法注入bean
 
 有实现接口 -> JDK动态代理，Proxy类和InvocationHandler接口实现
 
-没有~ -> cglib第三方库实现
+没有~ -> cglib第三方库实现（代理子类实现）
 
 ##### 执行过程和实战
 
-AspectJ切面：包括切点和通知
+**AspectJ切面**：包括切点和通知
 
 Point Cut切点：确认连接点
 
-Join Point连接点：程序方法执行，方法调用、异常处理
+**Join Point连接点**：程序方法执行，方法调用/异常处理
 
-Advice通知：around,before,after拦截器，处理连接点
+**Advice通知**：around,before,after拦截器，处理连接点
 
 Introduction引介：代理对象配置目标对象
 
-Waving织入：配合连接点、通知等执行目标方法
+**Waving织入**：配合连接点、通知等**执行目标方法**
 
 AOP proxy：实现代理协议的对象。
 
@@ -88,7 +90,7 @@ Target object目标对象：被代理的对象。
 
 ###### 介绍
 
-运行时，动态创建代理对象。
+运行时，**动态创建**代理对象。
 
 ###### 功能
 
@@ -160,7 +162,7 @@ Mandtory 有则加入，无则异常
 
 ##### 事务失效
 
-未捕获异常或运行时异常
+**未捕获异常或运行时异常！！！**
 
 传播事务设置不当
 
@@ -168,7 +170,7 @@ Mandtory 有则加入，无则异常
 
 跨方法和非公开方法
 
-（调用this会失效，事务通过动态代理控制，没有走代理）
+（调用this会失效，**事务通过动态代理控制**，没有走代理）
 
 #### MVC架构
 
@@ -238,9 +240,7 @@ Mandtory 有则加入，无则异常
 
 singleton单例
 
-prototype原型
-
-每次获取一个新的bean
+prototype原型（每次获取一个新的bean）
 
 http
 
@@ -262,7 +262,7 @@ websocket
 
 ### 5.Spring循环依赖
 
-**单例模式下注入，A类注入B对象，B注入A
+**单例模式**下注入，A类注入B对象，B注入A
 
 都是Map缓存
 
@@ -284,7 +284,7 @@ B注入A，通过三级缓存getObject()，存二级缓存，注入的A就读这
 
 前者是核心容器，管理bean生命周期，配置元数据，依赖注入
 
-后者特殊的Bean 用于 自定义Bean
+后者特殊的Bean 用于 **自定义Bean**
 
 ## MVC
 
@@ -298,15 +298,15 @@ Controller 控制器 请求和响应view 和 model
 
 ### 工作流程
 
-前端控制器/处理器映射器/处理器适配器/handler处理器
+前端控制器/**处理器**映射器/处理器适配器/handler处理器
 
 见图
 
 ### HandlerMapping 和 handlerAdapter
 
-前者负责将请求映射到处理器Controller
+前者负责将请求映射到处理器
 
-后者负责调用处理器Controller处理请求
+后者负责调用处理器处理请求
 
 ## SpringBoot
 
@@ -334,7 +334,7 @@ Controller 控制器 请求和响应view 和 model
 
 
 
--> @EnableAutoConfig/componetscan和/csonfiguration
+-> @EnableAutoConfig/ 扫描配置类和component//componetscan和/csonfiguration
 
 配置类和componet扫描/自动注入注解
 
@@ -342,7 +342,7 @@ Controller 控制器 请求和响应view 和 model
 
 @EnableAutoConfig
 
-@AutoConfigurationPackage配置包范围
+@AutoConfigurationPackage**配置包范围**
 
 @Import({AutoConfigurationImportSelector.class})
 
@@ -394,11 +394,31 @@ pom添加依赖
 
 ## 微服务
 
+把一个复杂单体架构项目，拆分成多个模块应用，实现通信
+
+-》微服务的组件：注册/配置/通信/容灾/网关/链路追踪/分布式事务/服务监控
+
+
+
 ### 优缺点
 
-拓展性/开发难度/团队合作/风险（高可用性）
+拓展性/风险（高可用性）/开发难度/团队合作/
 
 
+
+### 微服务通信原理/场景/优劣势
+
+http/rpc
+
+应对跨域场景/微服务对外平台
+
+微服务内部调用
+
+
+
+前者http头部更臃肿/后者基于Tcp通信（报文头更轻量）
+
+后者二进制协议更快
 
 ### 组件
 
@@ -441,6 +461,8 @@ pom添加依赖
 @Resource注入接口
 
 #### Dubbo
+
+注册中心，消费者动态代理类（不改变已有逻辑（代理类）/负载均衡）消费
 
 rpc/tcp/socket
 
@@ -550,7 +572,15 @@ mapper包下可以定义新包
 
 构造函数注入 最推荐，保证不可变性，启动确保不为null
 
+
+
 @Autowired 默认指定类型，配合requierd（允许忽略）,Qualifier()
 
 @Resource 默认指定bean名，也可以指定类型
+
+
+
+前者是spring后者jdk提供
+
+前者可以为null，后者不可以
 
